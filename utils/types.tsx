@@ -5,3 +5,8 @@ export type UserType = {
     discount: number,
     saveditems: string[]
 }
+
+export type UserContextType = {
+    user: UserType | null,
+    setUser: (user:UserType)=>void;
+}
