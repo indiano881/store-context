@@ -2,6 +2,8 @@
 
 import { SetStateAction, useState } from "react"
 import { registeredUsers } from "../../../utils/users"
+import { UserType } from "../../../utils/types"
+import { deflate } from "zlib"
 
 const LogIn = () =>{
     const [userInput, setUserInput]=useState<string | null>(null)
@@ -12,6 +14,10 @@ const LogIn = () =>{
     }
 
     const handleClick= () => {
+        const loggedInUsers= registeredUsers.filter((user:UserType)=> user.name===userInput )
+        if (loggedInUsers) {
+            console.log(loggedInUsers[0])
+        }
 
     }
 
@@ -25,3 +31,5 @@ const LogIn = () =>{
     </div>
     )
 }
+
+export default LogIn;
