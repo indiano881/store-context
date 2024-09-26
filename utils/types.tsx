@@ -2,7 +2,7 @@ export type UserType = {
     name:string,
     password:string,
     category: string,
-    discount: number,
+    membership: string,
     saveditems: string[]
 }
 

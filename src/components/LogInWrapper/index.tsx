@@ -17,6 +17,8 @@ const LogInWrapper = ({children}:{children:React.ReactNode}) => {
         <>
             <Menu/>
             <h2>Hi {user.name}! Welcome to Pandoran!</h2>
+            <h3>Check the latest {user.category} products!</h3>
+            <h3> As a {user.membership} member you get a {user.membership==="gold" ? 10 : user.membership==="platinum" ? 20 : 5} discount</h3>
             {children}
         </>
     
