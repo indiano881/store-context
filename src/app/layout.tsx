@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { UserProvider } from "../../utils/contexts";
+import LogIn from "@/components/LogIn";
+import LogInWrapper from "@/components/LogInWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <UserProvider>
+          {/*is the oine whoc controls what tp show */}
+          <LogInWrapper children={children} />
+          
+        </UserProvider>
       </body>
     </html>
   );
