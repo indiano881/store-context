@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ProductType } from "../../../utils/types";
 
 const ArrowIcon = () => (
@@ -17,22 +18,22 @@ const ArrowIcon = () => (
 
 const CardSingle = ({name, description, image}:ProductType)=> {
     return (
-        <div className="w-full md:w-4/12 mb-6 md:mb-0 md:p-3">
+        <div className="w-full md:w-2/12 mb-6 md:mb-0 md:p-3">
         <div>
           <img
-            className="w-full h-auto max-w-[550px] max-h-[550px]"
+            className="w-full h-auto max-w-[550px] max-h-[251px]"
             src={image}
             alt={name}
           />
           <div>
-            <h2 >{name}</h2>
-            <p>
+            <h2 className="h2">{name}</h2>
+            <p className="">
               {description}
             </p>
-            <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer">
+            <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={""}>
               View Details
               <ArrowIcon />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
