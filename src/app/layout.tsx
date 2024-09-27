@@ -39,8 +39,8 @@ export default function RootLayout({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false); // Hide splash screen after 2.5 seconds
-    }, 2500); // 2.5 seconds
+      setLoading(false); 
+    }, 2200); 
 
     return () => clearTimeout(timer);
   }, []);
