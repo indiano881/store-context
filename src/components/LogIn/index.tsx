@@ -27,11 +27,11 @@ const LogIn = () =>{
     }
 
     return (
-    <div>
-        <p>LogIn</p>
+    <div className="bg-pt-primary text-white flex flex-col items-center">
+        
         <label htmlFor="user-input">Enter username</label>
         <input id="user-input" type="text" onChange={handleChange}/>
-        <button onClick={handleClick} className="bg-red-700">Log in</button>
+        <button onClick={handleClick} className="bg-pt-secondary text-black px-6 m-2 rounded-full hover:bg-white font-semibold">Log in</button>
     
     </div>
     )
