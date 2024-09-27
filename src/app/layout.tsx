@@ -4,6 +4,7 @@ import "./globals.css";
 import { UserProvider } from "../../utils/contexts";
 import LogIn from "@/components/LogIn";
 import LogInWrapper from "@/components/LogInWrapper";
+import HBMenu from "@/components/HBMenu";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <UserProvider>
+          <HBMenu />
           {/*is the oine whoc controls what tp show */}
           <LogInWrapper children={children} />
           
