@@ -62,11 +62,11 @@ export default function HBMenu() {
         <>
         <button
   onClick={toggle}
-  className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-pt-primary"
+  className="text-white focus:outline-none m-1.5 rounded px-6 py-2 font-medium bg-pt-primary relative"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-6 h-6"
+    className="w-8 h-8 absolute top-[-6px] left-[-20px]"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"

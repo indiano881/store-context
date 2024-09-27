@@ -26,3 +26,9 @@ export type ProductType = {
 }
 
 //ourProduct ={...data} same but less clean
+
+export type LogoProps= {
+    width: string,
+    height: string,
+    color: string
+}

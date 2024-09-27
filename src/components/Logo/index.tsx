@@ -1,10 +1,11 @@
-import React from "react";
+import { LogoProps } from "../../../utils/types";
 
-export const AcmeLogoFlex2 = () => (
+
+export const Logo = ({width, height, color}:LogoProps) => (
   <svg
-    fill="#21528F"
-    height="200px"
-    width="200px"
+    fill={color}
+    height={height}
+    width={width}
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -48,4 +49,4 @@ export const AcmeLogoFlex2 = () => (
   </svg>
 );
 
-export default AcmeLogoFlex2;
+export default Logo;

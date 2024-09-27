@@ -1,5 +1,6 @@
+import Logo from "../Logo";
 
-import { AcmeLogo2 } from "./AcmeLogo2";
+
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
             <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                 <div className="flex items-center">
-                    <AcmeLogo2 />
+                    <Logo width={"36px"} height={"36px"} color={"#21528F"} />
                     <p className="w-auto h-9 text-2xl font-bold text-pt-primary">Pandorum</p>
                 </div>
                 
