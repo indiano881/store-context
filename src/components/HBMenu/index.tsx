@@ -112,7 +112,7 @@ export default function HBMenu() {
           </NavbarBrand>
         </NavbarContent>
   
-        <NavbarContent className="hidden sm:flex w-[95%]" >
+        <NavbarContent className="hidden sm:flex w-full" >
           <NavbarBrand>
             <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
             <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
