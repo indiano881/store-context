@@ -42,17 +42,14 @@ const config: Config = {
         },
       },
       colors: {
-        "pt-primary": "#FFFFFF",
-        "pt-secondary": "#0C051D",
+        "pt-primary": "#21528F",
+        "pt-secondary": "#E0A73F",
         "pt-calmgreen": "#1D6453",
         "pt-background": "#ECF2F1",
-        "pt-darkblue1": "#14243C",
+        "pt-bluegray": "#556E8B",
         "pt-darkblue2": "#2A394E",
-        "pt-gray1": "#868686",
-        "pt-lightgrayborder": "#E8E8E8",
-        "pt-gray2": "#F9F9F9",
-        "pt-navyblue":"#0B051D",
-        "bg-matilda": "#3B3B3B",//check #262626 otherwise?
+        "pt-gray1": "#556E8B",
+        
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

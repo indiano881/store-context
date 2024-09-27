@@ -5,6 +5,7 @@ import { UserProvider } from "../../utils/contexts";
 import LogIn from "@/components/LogIn";
 import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <LogInWrapper children={children} />
           
         </UserProvider>
+        <Footer />
       </body>
     </html>
   );
