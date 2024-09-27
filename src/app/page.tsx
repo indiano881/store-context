@@ -1,22 +1,42 @@
-"use client"
+"use client";
 
-import LogIn from "@/components/LogIn";
+
 import { fetchData } from "../../utils/functions";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import CardSingle from "@/components/CardSingle";
+import { useUserContext } from "../../utils/contexts";
+import { UserContextType } from "../../utils/types";
 
 export default function Home() {
+  const {user} =useUserContext() as UserContextType;
+  const [products, setProducts] = useState<any[]>([]);  // Initialize as an empty array
 
-  useEffect(()=>{
-    fetchData("https://dummyjson.com/products?limit=0")//working get all 194 products use limit=25 or x2 x4
-    fetchData('https://dummyjson.com/products/category/smartphones')//working
-    fetchData('https://dummyjson.com/products/categories')
-  },[])
-//data.meals.slice(0,5) for example or sort by review
-  return (<>
-  <h1>connected</h1>
+  useEffect(() => {
+    fetchData("https://dummyjson.com/products?limit=25", setProducts); // Fetching data
+  }, []);  // empty dependency array to fetch once on component mount
   
-  </>
-   
+  useEffect(() => {
+  if (user) {
+    fetchData("https://dummyjson.com/products?limit=25", setProducts);
+  }
+}, [user]);  // fetch data only when `user` is present
+
+
+  return (
+    <>
+      <h1>connected</h1>
+      <div className="flex flex-wrap">
+        {/* Check if products is not empty before mapping */}
+        {products && products.length > 0 ? (
+          products.map((item, index) => (
+            
+              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.images[0]}  />
+          
+          ))
+        ) : (
+          <p>Loading products...</p>
+        )}
+      </div>
+    </>
   );
 }

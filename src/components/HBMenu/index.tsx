@@ -3,8 +3,6 @@
 import {
     Navbar,
     NavbarBrand,
-    NavbarMenu,
-    NavbarMenuItem,
     NavbarContent,
     NavbarItem,
     Link,

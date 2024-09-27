@@ -13,6 +13,7 @@ export type UserContextType = {
 //adhust this
 export type ProductType = {
     name: string,
+    description: string,
     id: string,
     image: string,
     reviews?: string
