@@ -31,7 +31,7 @@ const LogIn = () =>{
         <p>LogIn</p>
         <label htmlFor="user-input">Enter username</label>
         <input id="user-input" type="text" onChange={handleChange}/>
-        <button onClick={handleClick}>Log in</button>
+        <button onClick={handleClick} className="bg-red-700">Log in</button>
     
     </div>
     )

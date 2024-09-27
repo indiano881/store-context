@@ -1,3 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .h1 {
+    @apply font-lato font-bold text-[80px] leading-[80px];
+  }
+
+  .h2 {
+    @apply font-lato font-semibold text-[24px] leading-[35px];
+  }
+
+  .h3 {
+    @apply font-lato font-bold text-[48px] leading-[120px];
+  }
+
+  .h4 {
+    @apply font-lato font-bold text-[36px];
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,8 +39,8 @@ Ideal for beauty, cosmetics, or lifestyle pro
 */
 html,
 body {
-  background-color: #F8E2CF;
-  color: #515151;
+  background-color: #D4AF37;
+  color: #2A2A2A;
   margin:0;
   height: 100vh;
 }

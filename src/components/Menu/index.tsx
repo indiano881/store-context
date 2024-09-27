@@ -11,8 +11,8 @@ const Menu = () => {
     }
 
     return (
-        <nav>
-            <Link href={"/"}>Home</Link>
+        <nav className="flex flex-row ">
+            <Link href={"/"} className="text-white">Home</Link>
             <Link href={"/products"}>products</Link>
             <Link href={"/profile"}>profile</Link>
             <Link href={"/wishlist"}>wishlist</Link>
