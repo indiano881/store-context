@@ -10,11 +10,14 @@ import {
 
 import { useState } from "react";
 import Logo from "../Logo";
+import { useUserContext } from "../../../utils/contexts";
+import { UserContextType } from "../../../utils/types";
   
   
 export default function HBMenu() {
 
     const [open, setOpen] = useState(false);
+    const {user, setUser} =useUserContext() as UserContextType;
 
     const style = {
       container: `relative top-1/4 w-full text-center mt-8`,
@@ -55,7 +58,10 @@ export default function HBMenu() {
     setOpen((prevState) => !prevState);
   };
 
-
+  const handleLogOut= () =>{
+    setUser(null)
+    setOpen((prevState) => !prevState);
+}
   
     return (
       <Navbar isBordered className="bg-pt-primary justify-between">
@@ -89,10 +95,11 @@ export default function HBMenu() {
           &times;
         </button>
         <MenuContainer>
-          <MenuItem href="#">Home</MenuItem>
-          <MenuItem href="#">Products</MenuItem>
-          <MenuItem href="#">Profile</MenuItem>
-          <MenuItem href="#">Wishlist</MenuItem>
+          <MenuItem href="/">Home</MenuItem>
+          <MenuItem href="products">Products</MenuItem>
+          <MenuItem href="profile">Profile</MenuItem>
+          <MenuItem href="wishlist">Wishlist</MenuItem>
+          {user && <button className={style.item} onClick={handleLogOut}>Log out</button>}
         </MenuContainer>
       </Menu>
     </>
