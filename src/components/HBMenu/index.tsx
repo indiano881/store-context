@@ -112,12 +112,13 @@ export default function HBMenu() {
           </NavbarBrand>
         </NavbarContent>
   
-        <NavbarContent className="hidden sm:flex w-full" >
+        <NavbarContent className="hidden sm:flex sm:flex-row sm:justify-between sm:w-full" >
           <NavbarBrand>
             <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
             <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
           </NavbarBrand>
-          <NavbarItem>
+          <div className="sm:flex sm:flex-row sm:justify-around sm:basis-2/5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+            <NavbarItem>
             <Link color="foreground" href="/products" className="text-white font-semibold">
               Products
             </Link>
@@ -143,7 +144,8 @@ export default function HBMenu() {
               <button className="text-pt-primary font-semibold" disabled={true}>Log out</button>
             </NavbarItem>
           </>
-          }
+          }</div>
+          
           
         </NavbarContent>
  
