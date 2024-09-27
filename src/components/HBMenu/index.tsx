@@ -112,62 +112,35 @@ export default function HBMenu() {
           </NavbarBrand>
         </NavbarContent>
   
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarContent className="hidden sm:flex w-[95%]" >
           <NavbarBrand>
             <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
             <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
           </NavbarBrand>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/products" className="text-white font-semibold">
               Products
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page" color="warning">
+            <Link href="/wishlist" aria-current="page" className="text-white font-semibold">
               Wishlist
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/profile" className="text-white font-semibold">
               Profile
             </Link>
           </NavbarItem>
+          {user && <>
+            <NavbarItem>
+            <button className="text-white font-semibold" onClick={handleLogOut}>Log out</button>
+          </NavbarItem>
+          
+          </>}
+          
         </NavbarContent>
  
       </Navbar>
-    );
-  }
-  const style = {
-    container: `relative top-1/4 w-full text-center mt-8`,
-    item: `text-3xl text-gray-400 cursor-pointer hover:text-white`,
-    menu: {
-      open: `h-full w-full `,
-      close: `w-0 h-full`,
-      default: `overflow-x-hidden md:overflow-hidden transition-all duration-700 fixed z-10 top-0 left-0 bg-black`,
-    },
-  };
-  
-  function Menu({ children, open }:any) {
-    return (
-      <div
-        className={`${style.menu.default} 
-         ${open ? style.menu.open : style.menu.close}`}
-      >
-        {children}
-      </div>
-    );
-  }
-  
-  function MenuContainer({ children }:any) {
-    return <div className={style.container}>{children}</div>;
-  }
-  
-  function MenuItem({ children, href }:any) {
-    return (
-      <div className="p-2">
-        <a href={href} className={style.item}>
-          {children}
-        </a>
-      </div>
     );
   }
