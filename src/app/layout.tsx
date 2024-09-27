@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import { CardContainer } from "@/components/CardsContainer";
 import { AcmeLogo2 } from "@/components/Footer/AcmeLogo2";
 import { AcmeLogoFlex } from "@/components/AcmeLogoFlex";
+import AcmeLogoFlex2 from "@/components/AcmeLogoFlex2";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -52,7 +53,7 @@ export default function RootLayout({
             id="splash-screen"
             className="fixed inset-0 flex items-center justify-center bg-pt-secondary z-50 transition-opacity duration-1000 ease-out opacity-100"
           >
-            <div className="text-pt-primary text-7xl font-bold animate-zoom flex flex-col justify-center items-center"><AcmeLogoFlex  /> <p className="hidden sm:inline-block">Pandorum</p>  </div>
+            <div className="text-pt-primary text-7xl font-bold animate-zoom flex flex-col justify-center items-center"><AcmeLogoFlex2  /> <p className="hidden sm:inline-block">Pandorum</p>  </div>
           </div>
           <p>Luxury for everyone!</p>
         </>
