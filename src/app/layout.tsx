@@ -8,7 +8,7 @@ import { UserProvider } from "../../utils/contexts";
 import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
 import Footer from "@/components/Footer";
-import { CardContainer } from "@/components/CardsContainer";
+import  CardsContainer  from "@/components/CardsContainer";
 
 import Logo from "@/components/Logo";
 
@@ -61,7 +61,7 @@ export default function RootLayout({
           <UserProvider>
             <HBMenu />
             <LogInWrapper>{children}</LogInWrapper>
-            <CardContainer />
+            <CardsContainer />
             <Footer />
           </UserProvider>
         )}
