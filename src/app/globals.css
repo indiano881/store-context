@@ -45,3 +45,23 @@ body {
   height: 100vh;
 }
 
+@layer utilities {
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    33% {
+      transform: scale(1.7);
+    }
+    66% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1); 
+    }
+  }
+
+  .animate-zoom {
+    animation: zoom 2.5s ease-in ; /* Zoom effect */
+  }
+}
