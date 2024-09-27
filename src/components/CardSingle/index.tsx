@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ProductType } from "../../../utils/types";
-
+import {capitalizeFirstLetter} from "../../../utils/functions"
 const StarRating = ({ rating}:{rating:number}) => {
   // Create an array of stars based on the rating
   const stars = [];
@@ -35,7 +35,7 @@ const ArrowIcon = () => (
 
 const CardSingle = ({name, price, category, stock, rating, image}:ProductType)=> {
     return (
-        <div className="w-full md:w-2/12 mb-6 md:mb-0 md:p-3">
+        <div className="w-full md:w-2/12 m-4 md:mb-0 md:p-3 border-4 border-pt-primary hover:border-pt-secondary cursor-pointer">
         <div>
           <img
             className="w-full h-auto max-w-[550px] max-h-[251px]"
@@ -45,7 +45,7 @@ const CardSingle = ({name, price, category, stock, rating, image}:ProductType)=>
           <div>
             <h2 className="h2">{name}</h2>
             <p className="">
-              {category}
+            {capitalizeFirstLetter(category)} 
             </p>
             <p>Price: {(price * 10).toFixed(2)} SEK</p>
 

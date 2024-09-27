@@ -7,3 +7,8 @@ export const fetchData = async (url: string, updateFunction:(data:any)=>void) =>
         console.error("Error fetching data:", error);
       }
     };
+
+  export const capitalizeFirstLetter=(str:string)=> {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    
