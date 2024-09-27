@@ -6,6 +6,7 @@ import LogIn from "@/components/LogIn";
 import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
 import Footer from "@/components/Footer";
+import { CardContainer } from "@/components/CardsContainer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +36,7 @@ export default function RootLayout({
           <HBMenu />
           {/*is the oine whoc controls what tp show */}
           <LogInWrapper children={children} />
-          
+          <CardContainer />
         </UserProvider>
         <Footer />
       </body>
