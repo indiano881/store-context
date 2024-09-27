@@ -15,7 +15,7 @@ const CardsContainer = () => {
 
   return(
     <>
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center pb-8">
         
         {products && products.length > 0 ? (
           products.map((item, index) => (

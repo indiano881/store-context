@@ -99,7 +99,7 @@ export default function HBMenu() {
           <MenuItem href="products">Products</MenuItem>
           <MenuItem href="profile">Profile</MenuItem>
           <MenuItem href="wishlist">Wishlist</MenuItem>
-          {user && <button className={style.item} onClick={handleLogOut}>Log out</button>}
+          {user && <button className="text-3xl text-pt-secondary cursor-pointer hover:text-blue-600" onClick={handleLogOut}>Log out</button>}
         </MenuContainer>
       </Menu>
     </>
@@ -132,12 +132,18 @@ export default function HBMenu() {
               Profile
             </Link>
           </NavbarItem>
-          {user && <>
+          {user ? 
+          <>
             <NavbarItem>
-            <button className="text-white font-semibold" onClick={handleLogOut}>Log out</button>
-          </NavbarItem>
-          
-          </>}
+              <button className="text-pt-secondary font-semibold" onClick={handleLogOut}>Log out</button>
+            </NavbarItem>
+          </> :
+          <>
+            <NavbarItem>
+              <button className="text-pt-primary font-semibold" disabled={true}>Log out</button>
+            </NavbarItem>
+          </>
+          }
           
         </NavbarContent>
  
