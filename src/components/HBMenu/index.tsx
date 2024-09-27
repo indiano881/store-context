@@ -7,8 +7,9 @@ import {
     NavbarItem,
     Link,
   } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo";
+
 import { useState } from "react";
+import Logo from "../Logo";
   
   
 export default function HBMenu() {
@@ -99,14 +100,14 @@ export default function HBMenu() {
   
         <NavbarContent className="sm:hidden pr-3" justify="center">
           <NavbarBrand>
-            <AcmeLogo />
+            <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
             <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
           </NavbarBrand>
         </NavbarContent>
   
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarBrand>
-            <AcmeLogo />
+            <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
             <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
           </NavbarBrand>
           <NavbarItem>
