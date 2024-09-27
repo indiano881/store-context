@@ -1,6 +1,23 @@
 import Link from "next/link";
 import { ProductType } from "../../../utils/types";
 
+const StarRating = ({ rating}:{rating:number}) => {
+  // Create an array of stars based on the rating
+  const stars = [];
+  
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push("★"); // Filled star
+    } else {
+      stars.push("☆"); // Empty star
+    }
+  }
+
+  return <p >Rating: <span className="text-pt-secondary">{stars.join(' ')}</span></p>;
+};
+
+
+
 const ArrowIcon = () => (
     <svg
       className="w-4 h-4 ml-2"
@@ -16,7 +33,7 @@ const ArrowIcon = () => (
     </svg>
   );
 
-const CardSingle = ({name, description, image}:ProductType)=> {
+const CardSingle = ({name, price, category, stock, rating, image}:ProductType)=> {
     return (
         <div className="w-full md:w-2/12 mb-6 md:mb-0 md:p-3">
         <div>
@@ -28,8 +45,13 @@ const CardSingle = ({name, description, image}:ProductType)=> {
           <div>
             <h2 className="h2">{name}</h2>
             <p className="">
-              {description}
+              {category}
             </p>
+            <p>Price: {(price * 10).toFixed(2)} SEK</p>
+
+
+            <p>{stock} left!</p>
+            <StarRating rating={rating} />
             <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={""}>
               View Details
               <ArrowIcon />
@@ -41,3 +63,19 @@ const CardSingle = ({name, description, image}:ProductType)=> {
 }
 
 export default CardSingle;
+
+/* NEXT UI HEART
+ <Button
+                isIconOnly
+                className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
+                radius="full"
+                variant="light"
+                onPress={() => setLiked((v) => !v)}
+              >
+                <HeartIcon
+                  className={liked ? "[&>path]:stroke-transparent" : ""}
+                  fill={liked ? "currentColor" : "none"}
+                />
+              </Button>
+              
+              */
