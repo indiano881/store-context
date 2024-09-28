@@ -1,6 +1,5 @@
 "use client";
 
-
 import { fetchData } from "../../utils/functions";
 import { useEffect, useState } from "react";
 import CardSingle from "@/components/CardSingle";
@@ -8,21 +7,17 @@ import { useUserContext } from "../../utils/contexts";
 import { UserContextType } from "../../utils/types";
 
 export default function Home() {
-  const {user} =useUserContext() as UserContextType;
-  const [products, setProducts] = useState<any[]>([]);  // Initialize as an empty array
+
+  const [products, setProducts] = useState<any[]>([]);  
 
   useEffect(() => {
-    fetchData("https://dummyjson.com/products?limit=25", setProducts); // Fetching data
-  }, []);  // empty dependency array to fetch once on component mount
-  
- 
-
+    fetchData("https://dummyjson.com/products?limit=25", setProducts)
+  }, []);
 
   return (
     <>
-      <h1>WWWW</h1>
       <div className="flex flex-wrap">
-        {/* Check if products is not empty before mapping */}
+       
         {products && products.length > 0 ? (
           products.map((item, index) => (
             
@@ -30,8 +25,11 @@ export default function Home() {
           
           ))
         ) : (
+
           <p>Loading products...</p>
+
         )}
+        
       </div>
     </>
   );

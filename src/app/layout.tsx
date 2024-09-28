@@ -9,8 +9,7 @@ import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
 import Footer from "@/components/Footer";
 import  CardsContainer  from "@/components/CardsContainer";
-
-import Logo from "@/components/Logo";
+import SplashScreen from "@/components/SplashScreen";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,38 +33,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [loading, setLoading] = useState(true);
+ 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    const animationRun = sessionStorage.getItem('animation');
     
+    const animationRun = sessionStorage.getItem("animation");
+
     if (animationRun) {
-      
-      setLoading(false);
+      setLoading(false); 
     } else {
       
       const timer = setTimeout(() => {
         setLoading(false);
-        sessionStorage.setItem('animation', 'true'); 
+        sessionStorage.setItem("animation", "true"); 
       }, 2100); 
-      
+
+     
       return () => clearTimeout(timer);
     }
   }, []);
-
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {loading ? (<>
-          <div
-            id="splash-screen"
-            className="fixed inset-0 flex items-center justify-center bg-pt-primary z-50 transition-opacity duration-1000 ease-out opacity-100"
-          >
-            <div className="text-pt-secondary text-3xl md:text-7xl font-bold animate-zoom flex flex-col justify-center items-center"><Logo width={"200px"} height={"200px"} color={"#E0A73F"} /> <p>Pandorum</p>  </div>
-          </div>
-          
-        </>
-          
+        {loading ? (
+          <SplashScreen />
         ) : (
           <UserProvider>
             <HBMenu />

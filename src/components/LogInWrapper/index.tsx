@@ -2,6 +2,7 @@
 
 import { useUserContext } from "../../../utils/contexts";
 import { UserContextType } from "../../../utils/types";
+import HBMenu from "../HBMenu";
 import LogIn from "../LogIn";
 
 

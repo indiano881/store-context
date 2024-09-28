@@ -5,13 +5,14 @@ import {
     NavbarBrand,
     NavbarContent,
     NavbarItem,
-    Link,
+    
   } from "@nextui-org/react";
 
 import { useState } from "react";
 import Logo from "../Logo";
 import { useUserContext } from "../../../utils/contexts";
 import { UserContextType } from "../../../utils/types";
+import Link from "next/link";
   
   
 export default function HBMenu() {
@@ -96,9 +97,9 @@ export default function HBMenu() {
         </button>
         <MenuContainer>
           <MenuItem href="/">Home</MenuItem>
-          <MenuItem href="products">Products</MenuItem>
-          <MenuItem href="profile">Profile</MenuItem>
-          <MenuItem href="wishlist">Wishlist</MenuItem>
+          <MenuItem href="/products">Products</MenuItem>
+          <MenuItem href="/profile">Profile</MenuItem>
+          <MenuItem href="/wishlist">Wishlist</MenuItem>
           {user && <button className="text-3xl text-pt-secondary cursor-pointer hover:text-blue-600" onClick={handleLogOut}>Log out</button>}
         </MenuContainer>
       </Menu>
@@ -119,7 +120,7 @@ export default function HBMenu() {
           </NavbarBrand>
           <div className="sm:flex sm:flex-row sm:justify-around sm:basis-2/5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
             <NavbarItem>
-            <Link color="foreground" href="/products" className="text-white font-semibold">
+            <Link href="/products" className="text-white font-semibold">
               Products
             </Link>
           </NavbarItem>
@@ -129,7 +130,7 @@ export default function HBMenu() {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/profile" className="text-white font-semibold">
+            <Link href="/profile" className="text-white font-semibold">
               Profile
             </Link>
           </NavbarItem>
