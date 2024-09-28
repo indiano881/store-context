@@ -37,11 +37,20 @@ export default function RootLayout({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); 
-    }, 2100); 
-
-    return () => clearTimeout(timer);
+    const animationRun = sessionStorage.getItem('animation');
+    
+    if (animationRun) {
+      
+      setLoading(false);
+    } else {
+      
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem('animation', 'true'); 
+      }, 2100); 
+      
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (

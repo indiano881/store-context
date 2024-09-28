@@ -24,13 +24,13 @@ export default function Home() {
 
   return (
     <>
-      
+      <h1>WWWW</h1>
       <div className="flex flex-wrap">
         {/* Check if products is not empty before mapping */}
         {products && products.length > 0 ? (
           products.map((item, index) => (
             
-              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.images[0]} category={item.category} shippingInformation={""} warrantyInformation={""} price={item.price} rating={item.rating} stock={item.stock}  />
+              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.thumbnails} category={item.category} shippingInformation={""} warrantyInformation={""} price={item.price} rating={item.rating} stock={item.stock}  />
           
           ))
         ) : (
