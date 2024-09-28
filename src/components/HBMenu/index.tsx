@@ -47,9 +47,9 @@ export default function HBMenu() {
     function MenuItem({ children, href }:any) {
       return (
         <div className="p-2">
-          <a href={href} className={style.item}>
+          <Link href={href} className={style.item}>
             {children}
-          </a>
+          </Link>
         </div>
       );
     }
