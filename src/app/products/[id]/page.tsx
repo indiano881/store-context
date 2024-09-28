@@ -1,10 +1,13 @@
 "use client"
 
 import Link from "next/link";
-import { capitalizeFirstLetter, fetchData } from "../../../../utils/functions";
-import { Dispatch, useEffect, useState } from "react";
+import { capitalizeFirstLetter } from "../../../../utils/functions";
+import { useEffect, useState } from "react";
 import StarRating from "@/components/StarRating";
 import ArrowIcon from "@/components/ArrowIcon";
+
+
+
 
 
 const SingleProduct = ({ params }: { params: { id: string } }) => {
@@ -13,12 +16,17 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
 
   
   useEffect(() => {
-    fetchData(`https://dummyjson.com/products/${id}`,setProduct)
-    
+    const fetchProduct = async () => {
+      const res = await fetch(`https://dummyjson.com/products/${id}`);
+      const data = await res.json();
+      setProduct(data);
+    };
+
+    fetchProduct();
   }, [id]);
 
   if (!product) {
-    return <p>Loading...</p>; 
+    return <p>Loading...</p>; // Show loading state while fetching the product
   }
 
   const { name, price, category, stock, rating, thumbnail } = product;
@@ -51,5 +59,3 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
 };
 
 export default SingleProduct;
-
-
