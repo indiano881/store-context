@@ -38,20 +38,11 @@ export default function RootLayout({
 
   useEffect(() => {
     
-    const animationRun = sessionStorage.getItem("animation");
-
-    if (animationRun) {
-      setLoading(false); 
-    } else {
-      
-      const timer = setTimeout(() => {
+      setTimeout(() => {
         setLoading(false);
-        sessionStorage.setItem("animation", "true"); 
       }, 2100); 
-
-     
-      return () => clearTimeout(timer);
-    }
+      
+    
   }, []);
   return (
     <html lang="en">

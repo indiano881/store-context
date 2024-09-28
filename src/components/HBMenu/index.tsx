@@ -115,8 +115,9 @@ export default function HBMenu() {
   
         <NavbarContent className="hidden sm:flex sm:flex-row sm:justify-between sm:w-full" >
           <NavbarBrand>
-            <Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
-            <p className="font-bold text-inherit text-pt-secondary">Pandorum</p>
+          <Link href={"/"} className="flex items-center"><Logo width={"36px"} height={"36px"} color={"#E0A73F"} />
+          <p className="font-bold text-inherit text-pt-secondary">Pandorum</p></Link>
+            
           </NavbarBrand>
           <div className="sm:flex sm:flex-row sm:justify-around sm:basis-2/5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
             <NavbarItem>
