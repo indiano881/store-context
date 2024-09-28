@@ -15,11 +15,7 @@ export default function Home() {
     fetchData("https://dummyjson.com/products?limit=25", setProducts); // Fetching data
   }, []);  // empty dependency array to fetch once on component mount
   
-  useEffect(() => {
-  if (user) {
-    fetchData("https://dummyjson.com/products?limit=25", setProducts);
-  }
-}, [user]);  // fetch data only when `user` is present
+ 
 
 
   return (
@@ -30,7 +26,7 @@ export default function Home() {
         {products && products.length > 0 ? (
           products.map((item, index) => (
             
-              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.thumbnails} category={item.category} shippingInformation={""} warrantyInformation={""} price={item.price} rating={item.rating} stock={item.stock}  />
+              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.thumbnail} category={item.category} shippingInformation={""} warrantyInformation={""} price={item.price} rating={item.rating} stock={item.stock}  />
           
           ))
         ) : (
