@@ -7,12 +7,12 @@ export default function RotatingWords() {
         <h1 className=" text-pt-secondary">Pandorum <span className='text-white'>is</span></h1>
         <div className={styles.words}>
           <div className="text-white">
-            <h1>much more</h1>
+            <h1 className=" text-pt-secondary">luxury</h1> 
             <h1>beauty</h1>
-            <h1>luxury</h1>
             <h1>groceries</h1>
             <h1>clothes</h1>
             <h1>accessories</h1>
+            <h1>much more</h1>
           </div>
         </div>
       </div>

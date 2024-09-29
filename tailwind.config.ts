@@ -37,6 +37,7 @@ const config: Config = {
       fontFamily: {
         lato: ["var(--font-lato)"],
         roboto: ["var(--font-roboto)"],
+        bodoni: ['Bodoni', 'serif'],
       },
     },
   },
