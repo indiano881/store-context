@@ -12,7 +12,7 @@ export default function RotatingWords() {
             <h1>groceries</h1>
             <h1>clothes</h1>
             <h1>accessories</h1>
-            <h1>much more</h1>
+            <h1>more</h1>
           </div>
         </div>
       </div>

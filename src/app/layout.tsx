@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { useEffect, useState } from "react";
 import "./globals.css";
-import { UserProvider } from "../../utils/contexts";
+import { UserProvider, useUserContext } from "../../utils/contexts";
 import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
 import Footer from "@/components/Footer";
-import  CardsContainer  from "@/components/CardsContainer";
+import CardsContainer from "@/components/CardsContainer";
 import SplashScreen from "@/components/SplashScreen";
+import { UserContextType } from "../../utils/types";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,17 +34,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    
-      setTimeout(() => {
-        setLoading(false);
-      }, 2100); 
-      
-    
+    setTimeout(() => {
+      setLoading(false);
+    }, 2100);
   }, []);
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
@@ -52,8 +50,9 @@ export default function RootLayout({
         ) : (
           <UserProvider>
             <HBMenu />
-            <LogInWrapper>{children}</LogInWrapper>
-            <CardsContainer />
+            <LogInWrapper>
+              {children}
+            </LogInWrapper>
             <Footer />
           </UserProvider>
         )}
@@ -61,3 +60,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

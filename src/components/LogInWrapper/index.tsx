@@ -1,15 +1,25 @@
 "use client"
 
+import { useEffect, useState } from "react";
 import { useUserContext } from "../../../utils/contexts";
 import { UserContextType } from "../../../utils/types";
 import HBMenu from "../HBMenu";
 import LogIn from "../LogIn";
+import { fetchSixRandom } from "../../../utils/functions";
+import CardSingle from "../CardSingle";
 
 
 const LogInWrapper = ({children}:{children:React.ReactNode}) => {
     //we have to tell not to use null, so we use aliases
     const {user} =useUserContext() as UserContextType;
+    const [products, setProducts] = useState<any[]>([]);  
 
+    useEffect(() => {
+      fetchSixRandom(setProducts)
+    }, []);
+    useEffect(() => {
+        fetchSixRandom(setProducts)
+      }, [user]);
     return (
     <div>
     {/*controller here we choose what to show */}
@@ -24,8 +34,19 @@ const LogInWrapper = ({children}:{children:React.ReactNode}) => {
             {children}
         </>
     
-    }
-    
+    }<div className="flex flex-wrap justify-evenly pb-8 mb-2">
+    {products && products.length > 0 ? (
+          products.map((item, index) => (
+            
+              <CardSingle name={item.title} description={item.description} key={item.id} id={item.id} image={item.thumbnail} category={item.category} shippingInformation={""} warrantyInformation={""} price={item.price} rating={item.rating} stock={item.stock}  />
+          
+          ))
+        ) : (
+
+          <p>Loading products...</p>
+
+        )}
+        </div>
     </div>
     )
 }

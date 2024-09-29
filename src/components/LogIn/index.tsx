@@ -4,6 +4,7 @@ import { SetStateAction, useState } from "react"
 import { registeredUsers } from "../../../utils/users"
 import { UserContextType, UserType } from "../../../utils/types"
 import { useUserContext } from "../../../utils/contexts"
+import RotatingWords from "../RotatingWords/RotatingWords"
 
 const LogIn = () =>{
     const [userInput, setUserInput]=useState<string | null>(null)
@@ -26,7 +27,9 @@ const LogIn = () =>{
 
     }
 
-    return (
+    return (<>
+
+    <RotatingWords />
     <div className="bg-pt-primary text-white flex flex-col items-center">
         
         <label htmlFor="user-input">Enter username</label>
@@ -34,6 +37,7 @@ const LogIn = () =>{
         <button onClick={handleClick} className="bg-pt-secondary text-black px-6 m-2 rounded-full hover:bg-white font-semibold">Log in</button>
     
     </div>
+    </>
     )
 }
 

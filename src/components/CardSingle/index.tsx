@@ -11,7 +11,7 @@ import ArrowIcon from "../ArrowIcon";
 
 const CardSingle = ({name, price, category, stock, rating, image, id}:ProductType)=> {
     return (
-        <div className="w-[180px] md:w-2/12 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer">
+        <div className="w-[170px] md:w-2/12 mb-2 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer">
         
           <img
             className="w-auto h-auto "
