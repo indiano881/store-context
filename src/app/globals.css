@@ -45,10 +45,10 @@ Ideal for beauty, cosmetics, or lifestyle pro
 */
 html,
 body {
-  background-color: white;
+  background-color: #21528F;
   color: black;
   margin:0;
-  height: 100vh;
+  
 }
 
 @layer utilities {

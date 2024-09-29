@@ -11,10 +11,10 @@ import ArrowIcon from "../ArrowIcon";
 
 const CardSingle = ({name, price, category, stock, rating, image, id}:ProductType)=> {
     return (
-        <div className="w-full md:w-2/12 m-4 md:mb-0 md:p-3 border-4 border-pt-primary hover:border-pt-secondary cursor-pointer">
-        <div>
+        <div className="w-[180px] md:w-2/12 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer">
+        
           <img
-            className="w-full h-auto max-w-[550px] max-h-[251px]"
+            className="w-auto h-auto "
             src={image}
             alt={name}
           />
@@ -33,7 +33,7 @@ const CardSingle = ({name, price, category, stock, rating, image, id}:ProductTyp
               <ArrowIcon />
             </Link>
           </div>
-        </div>
+        
       </div>
     )
 }
