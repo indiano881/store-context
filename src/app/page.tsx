@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import CardSingle from "@/components/CardSingle";
 import { useUserContext } from "../../utils/contexts";
 import { UserContextType } from "../../utils/types";
+import RotatingWords from "@/components/RotatingWords/RotatingWords";
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-wrap">
-       
+       <RotatingWords />
         {products && products.length > 0 ? (
           products.map((item, index) => (
             
