@@ -22,7 +22,8 @@ export type ProductType = {
     rating: number,
     stock: number,
     image: string,
-    reviews?: string
+    reviews?: string,
+    simple: boolean
 }
 
 //ourProduct ={...data} same but less clean

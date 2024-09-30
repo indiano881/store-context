@@ -9,7 +9,7 @@ import ArrowIcon from "../ArrowIcon";
 
 
 
-const CardSingle = ({name, price, category, stock, rating, image, id}:ProductType)=> {
+const CardSingle = ({name, price, category, stock, rating, image, id, simple}:ProductType)=> {
     return (
         <div className="w-[170px] md:w-2/12 mb-2 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer">
         
@@ -20,18 +20,32 @@ const CardSingle = ({name, price, category, stock, rating, image, id}:ProductTyp
           />
           <div>
             <h2 className="h2">{name}</h2>
+            {simple && 
+            <>
+              {capitalizeFirstLetter(category)} 
+            </>
+            
+            }
             <p className="">
-            {capitalizeFirstLetter(category)} 
+            
             </p>
-            <p>Price: {(price * 10).toFixed(2)} SEK</p>
+            <p>{(price * 10).toFixed(2)} SEK</p>
 
 
-            <p>{stock} left!</p>
-            <StarRating rating={rating} />
-            <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={`/products/${id}`}>
+           
+            {simple && 
+            <>
+             <p>{stock} left!</p>
+              <StarRating rating={rating} />
+              <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={`/products/${id}`}>
               View Details
               <ArrowIcon />
             </Link>
+            </>
+            
+            }
+            
+            
           </div>
         
       </div>

@@ -11,14 +11,14 @@ export const registeredUsers:UserType[] =[
     {
         name: "Rob",
         password: "123456",
-        category: "furniture",
+        category: "smartphones",
         membership: "platinum",
         saveditems:[]
     },
     {
         name: "Miriam",
         password: "123456",
-        category: "furniture",
+        category: "womens-bags",
         membership: "regular",
         saveditems:[]
     }
