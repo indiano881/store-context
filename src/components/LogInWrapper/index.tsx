@@ -36,7 +36,7 @@ const LogInWrapper = ({children}:{children:React.ReactNode}) => {
     
     }
     <div className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">
-                <h2 className="border-4 rounded-full border-pt-secondary p-2">More of our luxurious products</h2>
+                <h2 className="border-4 rounded-full border-pt-secondary p-2">Wanna check out some of our <span className="text-pt-secondary">fantastic </span> products? </h2>
             </div>
     <div className="flex flex-wrap justify-evenly pb-8 mb-2">
       
