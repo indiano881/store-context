@@ -6,21 +6,21 @@ export const registeredUsers:UserType[] =[
         password: "123456",
         category: "groceries",
         membership: "gold",
-        saveditems:[]
+        saveditems:[11,22,33]
     },
     {
         name: "Rob",
         password: "123456",
         category: "smartphones",
         membership: "platinum",
-        saveditems:[]
+        saveditems:[80,160]
     },
     {
         name: "Miriam",
         password: "123456",
         category: "womens-bags",
         membership: "regular",
-        saveditems:[]
+        saveditems:[50,100,125,150]
     }
     
 

@@ -3,7 +3,7 @@ export type UserType = {
     password:string,
     category: string,
     membership: string,
-    saveditems: string[]
+    saveditems: number[]
 }
 
 export type UserContextType = {
