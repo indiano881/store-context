@@ -26,36 +26,42 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   }, [id]);
 
   if (!product) {
-    return <p>Loading...</p>; // Show loading state while fetching the product
+    return <p>Loading...</p>; 
   }
 
-  const { name, price, category, stock, rating, thumbnail } = product;
+  const { title, price, category, stock, rating, thumbnail, image, shippingInformation, warrantyInformation, description } = product;
 
   return (
-    <div className="w-full md:w-2/12 m-4 md:mb-0 md:p-3 border-4 border-pt-primary hover:border-pt-secondary cursor-pointer">
-      <div>
+    <div className=" m-8 border-8 border-pt-secondary bg-white hover:blue-600 flex  md:flex-row flex-col items-center">
+      
         <img
-          className="w-full h-auto max-w-[550px] max-h-[251px]"
-          src={thumbnail}
-          alt={name}
+          className="w-full sm:w-[60%]  h-auto basis-1/2"
+          src={product.images[0]}
+          alt={title}
         />
-        <div>
-          <h2 className="h2">{name}</h2>
-          <p>{capitalizeFirstLetter(category)}</p>
-          <p>Price: {(price * 10).toFixed(2)} SEK</p>
-          <p>{stock} left!</p>
+        <div className="bg-white w-full h-[100%] border-8 border-pt-primary basis-1/2 p-4">
+          <h2 className="h2 text-black">{title}</h2>
+          <p className="italic py-2">{capitalizeFirstLetter(category)}</p>
+          
+          <p className="py-2">Price: {(price * 10).toFixed(2)} SEK</p>
+          <p className="py-2">In stock: {stock}</p>
+          <p className="italic py-2 text-justify">{description}</p>
           <StarRating rating={rating} />
-          <Link
-            className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-            href={`/products/${id}`}
-          >
-            View Details
-            <ArrowIcon />
-          </Link>
+          <p className="py-2">{shippingInformation}</p>
+          <p className="py-2">{warrantyInformation}</p>
+         
         </div>
       </div>
-    </div>
+    
   );
 };
 
 export default SingleProduct;
+/*name: string,
+    category: string,
+    description: string,
+    shippingInformation: string,
+    warrantyInformation: string,
+    
+    reviews?: string,
+    simple: boolean*/

@@ -40,7 +40,7 @@ const Products = () => {
               price={item.price}
               rating={item.rating}
               stock={item.stock}
-              simple={false}
+              simple={true}
             />
           ))
         ) : (

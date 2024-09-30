@@ -37,14 +37,14 @@ const CardSingle = ({name, price, category, stock, rating, image, id, simple}:Pr
             <>
              <p>{stock} left!</p>
               <StarRating rating={rating} />
-              <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={`/products/${id}`}>
-              View Details
-              <ArrowIcon />
-            </Link>
+              
             </>
             
             }
-            
+            <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={`/products/${id}`}>
+              View Details
+              <ArrowIcon />
+            </Link>
             
           </div>
         
