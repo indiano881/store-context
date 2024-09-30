@@ -7,13 +7,13 @@ export const fetchData = async (url: string, updateFunction:(data:any)=>void) =>
         console.error("Error fetching data:", error);
       }
     };
-
+    
   export const capitalizeFirstLetter=(str:string)=> {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }
     
     export const fetchSixRandom = async (updateFunction: any) => {
-      // Generate six random IDs
+      
       const randomIds = Array.from({ length: 10 }, () =>
         Math.floor(Math.random() * 196)  
       );

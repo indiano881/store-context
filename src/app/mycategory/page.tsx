@@ -6,8 +6,6 @@ import { UserContextType } from "../../../utils/types";
 import CardSingle from "@/components/CardSingle";
 import { fetchData } from "../../../utils/functions";
 
-
-
 const Mycategory = ()=> {
     const { user } = useUserContext() as UserContextType;
   const [products, setProducts] = useState<any[]>([]);
@@ -27,7 +25,6 @@ const Mycategory = ()=> {
 
   return (
     <>
-      <h2>Products</h2>
       <div className="flex flex-wrap justify-evenly pb-8 mb-2">
         {products && products.length > 0 ? (
           products.map((item) => (

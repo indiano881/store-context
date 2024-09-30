@@ -12,16 +12,16 @@ const Products = () => {
 
   useEffect(() => {
     if (user?.category) {
-      // Fetch products only when user.category is defined
+      
       fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
     }
-  }, [user?.category]); // Add user?.category as dependency to refetch on change
+  }, [user?.category]); 
   useEffect(() => {
     if (user) {
-      // Fetch products only when user.category is defined
+      
       fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
     }
-  }, [user]); // Add user?.category as dependency to refetch on change
+  }, [user]); 
   return (
     <>
       
