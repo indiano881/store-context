@@ -51,7 +51,6 @@ const MySavedItems = () => {
 
   return (
     <>
-      <h2>My Saved Items</h2>
       <div className="flex flex-wrap justify-evenly pb-8 mb-2">
         {products && products.length > 0 ? (
           products.map((item) => (
