@@ -98,7 +98,7 @@ export default function HBMenu() {
         <MenuContainer>
           <MenuItem href="/">Home</MenuItem>
           <MenuItem href="/products">Products</MenuItem>
-          <MenuItem href="/profile">Profile</MenuItem>
+          <MenuItem href="/mycategory">My category</MenuItem>
           <MenuItem href="/wishlist">Wishlist</MenuItem>
           {user && <button className="text-3xl text-pt-secondary cursor-pointer hover:text-blue-600" onClick={handleLogOut}>Log out</button>}
         </MenuContainer>
@@ -125,16 +125,17 @@ export default function HBMenu() {
               Products
             </Link>
           </NavbarItem>
+          <NavbarItem>
+            <Link href="/mycategory" className="text-white font-semibold">
+              My category
+            </Link>
+          </NavbarItem>
           <NavbarItem isActive>
             <Link href="/wishlist" aria-current="page" className="text-white font-semibold">
               Wishlist
             </Link>
           </NavbarItem>
-          <NavbarItem>
-            <Link href="/profile" className="text-white font-semibold">
-              Profile
-            </Link>
-          </NavbarItem>
+          
           {user ? 
           <>
             <NavbarItem>

@@ -1,30 +1,33 @@
-"use client";
+"use client"
 
 import { useEffect, useState } from "react";
 import { useUserContext } from "../../../utils/contexts";
 import { UserContextType } from "../../../utils/types";
-import { fetchData } from "../../../utils/functions";
 import CardSingle from "@/components/CardSingle";
+import { fetchData } from "../../../utils/functions";
 
-const Products = () => {
-  const { user } = useUserContext() as UserContextType;
+
+
+const Mycategory = ()=> {
+    const { user } = useUserContext() as UserContextType;
   const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
     if (user?.category) {
-      // Fetch products only when user.category is defined
-      fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
+     
+      fetchData(`https://dummyjson.com/products/category/${user.category}`, setProducts);
     }
-  }, [user?.category]); // Add user?.category as dependency to refetch on change
+  }, [user?.category]); 
   useEffect(() => {
     if (user) {
-      // Fetch products only when user.category is defined
-      fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
+      
+      fetchData(`https://dummyjson.com/products/category/${user.category}`, setProducts);
     }
-  }, [user]); // Add user?.category as dependency to refetch on change
+  }, [user]); 
+
   return (
     <>
-      
+      <h2>Products</h2>
       <div className="flex flex-wrap justify-evenly pb-8 mb-2">
         {products && products.length > 0 ? (
           products.map((item) => (
@@ -51,4 +54,5 @@ const Products = () => {
   );
 };
 
-export default Products;
+
+export default Mycategory;

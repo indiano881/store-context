@@ -8,7 +8,7 @@ import { UserProvider, useUserContext } from "../../utils/contexts";
 import LogInWrapper from "@/components/LogInWrapper";
 import HBMenu from "@/components/HBMenu";
 import Footer from "@/components/Footer";
-import CardsContainer from "@/components/CardsContainer";
+
 import SplashScreen from "@/components/SplashScreen";
 import { UserContextType } from "../../utils/types";
 
@@ -34,7 +34,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {

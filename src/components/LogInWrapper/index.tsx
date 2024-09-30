@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useUserContext } from "../../../utils/contexts";
 import { UserContextType } from "../../../utils/types";
-import HBMenu from "../HBMenu";
 import LogIn from "../LogIn";
 import { fetchSixRandom } from "../../../utils/functions";
 import CardSingle from "../CardSingle";
