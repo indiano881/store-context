@@ -50,7 +50,7 @@ const MySavedItems = () => {
   }, [user?.saveditems]);
 
   return (
-    <>
+    <div className="grow">
       <div className="flex flex-wrap justify-evenly pb-8 mb-2">
         {products && products.length > 0 ? (
           products.map((item) => (
@@ -73,7 +73,7 @@ const MySavedItems = () => {
           <p className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">No saved items.</p>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
