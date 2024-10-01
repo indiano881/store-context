@@ -25,7 +25,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   }, [id]);
 
   useEffect(() => {
-    // Check if the product is already in the user's wishlist when the component mounts
+    
     if (user) {
       setIsInWishlist(user.saveditems.includes(id));
     }

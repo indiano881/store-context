@@ -4,23 +4,23 @@ export const registeredUsers:UserType[] =[
     {
         name: "Davide",
         password: "123456",
-        category: "groceries",
+        category: "vehicle",
         membership: "gold",
-        saveditems:[11,22,33]
+        saveditems:[]
     },
     {
         name: "Rob",
         password: "123456",
-        category: "smartphones",
+        category: "motorcycle",
         membership: "platinum",
-        saveditems:[80,160]
+        saveditems:[]
     },
     {
         name: "Miriam",
         password: "123456",
-        category: "womens-bags",
+        category: "womens-jewellery",
         membership: "regular",
-        saveditems:[50,100,125,150]
+        saveditems:[]
     }
     
 
