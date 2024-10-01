@@ -44,7 +44,7 @@ const Mycategory = ()=> {
             />
           ))
         ) : (
-          <p>Loading products...</p>
+          <p className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">Loading products...</p>
         )}
       </div>
     </>

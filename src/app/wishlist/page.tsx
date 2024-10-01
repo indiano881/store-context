@@ -70,7 +70,7 @@ const MySavedItems = () => {
             />
           ))
         ) : (
-          <p>No saved items.</p>
+          <p className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">No saved items.</p>
         )}
       </div>
     </>
