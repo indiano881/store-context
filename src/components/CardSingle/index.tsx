@@ -11,14 +11,14 @@ import ArrowIcon from "../ArrowIcon";
 
 const CardSingle = ({name, price, category, stock, rating, image, id, simple}:ProductType)=> {
     return (
-        <div className="w-[170px] md:w-2/12 mb-2 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer">
+        <div className="w-[170px] md:w-2/12 mb-2 sm:m-4 md:mb-0 md:p-3 border-4 border-pt-secondary bg-white hover:border-blue-600 cursor-pointer flex flex-col">
         
           <img
             className="w-auto h-auto "
             src={image}
             alt={name}
           />
-          <div>
+          <div className="grow">
             <h2 className="h2">{name}</h2>
             {simple && 
             <>
@@ -41,13 +41,16 @@ const CardSingle = ({name, price, category, stock, rating, image, id, simple}:Pr
             </>
             
             }
-            <Link className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer" href={`/products/${id}`}>
+            
+            
+          </div>
+          <div className="flex flex-row w-full">
+          <Link className="rounded-full border-2 border-pt-primary p-1 m-2 w-[150px] bg-pt-secondary hover:bg-pt-primary text-white text-center flex justify-center items-center" href={`/products/${id}`}>
               View Details
               <ArrowIcon />
             </Link>
-            
           </div>
-        
+          
       </div>
     )
 }
