@@ -42,7 +42,7 @@ export default function HBMenu() {
     }
 
     function MenuContainer({ children }:any) {
-      return <div className={style.container}>{children}</div>;
+      return <div className={style.container} onClick={toggle}>{children}</div>;
     }
 
     function MenuItem({ children, href }:any) {
