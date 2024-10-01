@@ -29,7 +29,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
     return <p>Loading...</p>; 
   }
 
-  const { title, price, category, stock, rating, thumbnail, image, shippingInformation, warrantyInformation, description } = product;
+  const { title, price, category, stock, rating, images, shippingInformation, warrantyInformation, description } = product;
 
   return (
     <div className=" m-8 border-8 border-pt-secondary bg-white hover:blue-600 flex  md:flex-row flex-col items-center">
@@ -49,7 +49,11 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
           <StarRating rating={rating} />
           <p className="py-2">{shippingInformation}</p>
           <p className="py-2">{warrantyInformation}</p>
-         
+         <div className="flex flex-col">
+          <p className="rounded-full border-2 border-pt-primary py-1 px-6 max-w-[180px] bg-pt-secondary hover:bg-pt-primary text-white mb-4 text-center">Save in Wishlist</p>
+          <Link href={"/mycategory"} className="rounded-full border-2 border-pt-primary py-1 px-6 max-w-[180px] bg-pt-secondary hover:bg-pt-primary text-white text-center">Back My Category</Link>
+          
+         </div>
         </div>
       </div>
     
@@ -57,11 +61,3 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
 };
 
 export default SingleProduct;
-/*name: string,
-    category: string,
-    description: string,
-    shippingInformation: string,
-    warrantyInformation: string,
-    
-    reviews?: string,
-    simple: boolean*/
