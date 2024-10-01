@@ -61,7 +61,7 @@ export default function HBMenu() {
 
   const handleLogOut= () =>{
     setUser(null)
-    setOpen((prevState) => !prevState);
+    
 }
   
     return (
