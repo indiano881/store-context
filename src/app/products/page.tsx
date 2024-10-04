@@ -9,25 +9,50 @@ import CardSingle from "@/components/CardSingle";
 const Products = () => {
   const { user } = useUserContext() as UserContextType;
   const [products, setProducts] = useState<any[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
+  const [inputSearch, setInputSearch] = useState<string>("");
 
   useEffect(() => {
-    if (user?.category) {
-      
-      fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
-    }
-  }, [user?.category]); 
-  useEffect(() => {
     if (user) {
-      
-      fetchData(`https://dummyjson.com/products?limit=90`, setProducts);
+      fetchData(`https://dummyjson.com/products?limit=90`, (data) => {
+        setProducts(data);
+        setFilteredProducts(data); 
+      });
     }
-  }, [user]); 
+  }, [user]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const searchValue = e.target.value; 
+  setInputSearch(searchValue);
+
+  
+  const filteredItems = products.filter((item) =>
+    item.title.toLowerCase().startsWith(searchValue.toLowerCase())
+  );
+  setFilteredProducts(filteredItems);
+};
+
   return (
     <>
-      
+      <div className="bg-pt-primary text-white flex flex-col items-center">
+        <label
+          htmlFor="user-input"
+          className="bg-pt-primary text-white text-3xl md:text-4xl text-center p-4 flex justify-center"
+        >
+          Search item
+        </label>
+        <input
+          id="user-input"
+          type="text"
+          value={inputSearch}
+          onChange={handleChange}
+          className="text-black min-h-[40px]"
+        />
+      </div>
+
       <div className="flex flex-wrap justify-evenly pb-8 mb-2">
-        {products && products.length > 0 ? (
-          products.map((item) => (
+        {filteredProducts && filteredProducts.length > 0 ? (
+          filteredProducts.map((item) => (
             <CardSingle
               name={item.title}
               description={item.description}
@@ -44,7 +69,9 @@ const Products = () => {
             />
           ))
         ) : (
-          <p className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">Loading products...</p>
+          <p className="bg-pt-primary text-white text-2xl text-center p-4 flex justify-center">
+            Loading products...
+          </p>
         )}
       </div>
     </>
