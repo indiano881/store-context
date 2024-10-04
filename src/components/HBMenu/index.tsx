@@ -48,7 +48,7 @@ export default function HBMenu() {
     function MenuItem({ children, href }:any) {
       return (
         <div className="p-2">
-          <Link href={href} className={style.item}>
+          <Link href={href} className={`${style.item}` }>
             {children}
           </Link>
         </div>
@@ -121,17 +121,17 @@ export default function HBMenu() {
           </NavbarBrand>
           <div className="sm:flex sm:flex-row sm:justify-around sm:basis-2/5 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
             <NavbarItem>
-            <Link href="/products" className="text-white font-semibold">
+            <Link href="/products" className="text-white font-semibold hover:underline">
               Products
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="/mycategory" className="text-white font-semibold">
+            <Link href="/mycategory" className="text-white font-semibold hover:underline">
               My category
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="/wishlist" aria-current="page" className="text-white font-semibold">
+            <Link href="/wishlist" aria-current="page" className="text-white font-semibold hover:underline">
               Wishlist
             </Link>
           </NavbarItem>
@@ -139,7 +139,7 @@ export default function HBMenu() {
           {user ? 
           <>
             <NavbarItem>
-              <button className="text-pt-secondary font-semibold" onClick={handleLogOut}>Log out</button>
+              <button className="text-pt-secondary font-semibold hover:underline" onClick={handleLogOut}>Log out</button>
             </NavbarItem>
           </> :
           <>

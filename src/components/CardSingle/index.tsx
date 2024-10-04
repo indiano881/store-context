@@ -45,7 +45,7 @@ const CardSingle = ({name, price, category, stock, rating, image, id, simple}:Pr
             
           </div>
           <div className="flex flex-row w-full">
-          <Link className="rounded-full border-2 border-pt-primary p-1 m-2 w-[150px] bg-pt-secondary hover:bg-pt-primary text-black hover_text-white text-center flex justify-center items-center" href={`/products/${id}`}>
+          <Link className="rounded-full border-2 border-pt-primary p-1 m-2 w-[150px] bg-pt-secondary hover:bg-pt-primary text-white text-center flex justify-center items-center" href={`/products/${id}`}>
               View Details
               <ArrowIcon />
             </Link>
