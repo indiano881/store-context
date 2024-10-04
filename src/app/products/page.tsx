@@ -46,7 +46,7 @@ const Products = () => {
           type="text"
           value={inputSearch}
           onChange={handleChange}
-          className="text-black min-h-[40px]"
+          className="text-black min-h-[40px] mb-4 w-[250px] md:w-[500px]"
         />
       </div>
 
