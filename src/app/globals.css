@@ -1,13 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'Bodoni';
-  src: 
-       url('/fonts/bodoniN.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
+
 @layer components {
   .h1 {
     @apply font-lato font-bold text-[80px] leading-[80px];
@@ -35,14 +29,13 @@ body {
   background-color: #21528F;
   color: black;
   margin:0;
-  
 }
 
 html {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-height: 100vh;
 }
 
 body {

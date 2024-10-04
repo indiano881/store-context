@@ -18,7 +18,7 @@ const CardSingle = ({name, price, category, stock, rating, image, id, simple}:Pr
             src={image}
             alt={name}
           />
-          <div className="grow">
+          <div className="grow pl-2">
             <h2 className="h2">{name}</h2>
             {simple && 
             <>
